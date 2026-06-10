@@ -7,7 +7,7 @@ from src.langgraphagenticai.nodes.basic_chatbot_model import BasicChatbotNode
 class GraphBuilder:
     def __init__(self,model):
         self.llm=model
-        self.grpah_builder= StateGraph(State)
+        self.graph_builder= StateGraph(State)
 
     def basic_chatbot_build_graph(self):
         """
@@ -26,4 +26,6 @@ class GraphBuilder:
         """
         if usecase=="Basic Chatbot":
             self.basic_chatbot_build_graph()
+            
+        return self.graph_builder.compile()
         
